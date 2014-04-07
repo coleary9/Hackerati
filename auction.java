@@ -36,15 +36,6 @@ private static class Item {
 		forSale.put(newName, new Item(newReserve));
 	}
 
-/*	private static Item findItem(String name) {
-		for (Item item: forSale) {
-			if (item.name.equals(name))
-			{
-				return item;
-			}
-		}
-		return null;
-	}*/
 
 	/* ends an items auction, throws an Invalid ID exception if the item doesn't exist. 
 	Sets success to true if the bid was above reserve,
@@ -73,7 +64,12 @@ private static class Item {
 		return true;
 		}
 	}
-
+	/* returns the history of an item 
+	Sets success to true if the bid was above reserve,
+	@param name               the name of the item being enquired about
+	@return 				  String of information for the itemHistory
+	@throws InvalidIdException    thrown if item doesn't exist
+    */
 	public static String itemHistory(String name) throws InvalidIdException {
 		Item inQuestion=forSale.get(name);
 		if (inQuestion==null) {
