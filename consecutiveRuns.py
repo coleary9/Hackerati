@@ -1,4 +1,5 @@
 import math
+import random
 def consecutiveRuns(data):
 	startsOfRuns=list()
 	for i in range(len(data)-2):
@@ -7,7 +8,14 @@ def consecutiveRuns(data):
 				startsOfRuns.append(i)
 	return startsOfRuns
 def main():
-    print(consecutiveRuns([1,2,3]))
+	total=0
+	for i in range(100):
+		data=list()
+		for i in range(1000000):
+			data.append(random.randint(0,99))
+		total+=len(consecutiveRuns(data))
+	print(total)
+
 
 if __name__ == "__main__":
     main()
